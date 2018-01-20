@@ -14,26 +14,23 @@ Toggle Switch UI Component for React Native Apps ( iOS and Android Compatible )
 * 1.Run `npm i react-native-toggle-switch --save`
 * 2.`import ToggleSwitch from 'react-native-toggle-switch'`    
 
-## Demo  
+<!-- ## Demo  
 * [Example](https://github.com/aminebenkeroum/toggle-switch-react-native/tree/master/example)
 
-![Screenshots](https://raw.githubusercontent.com/aminebenkeroum/toggle-switch-react-native/master/example/Screenshots/Screenshot.gif)
+![Screenshots](https://raw.githubusercontent.com/aminebenkeroum/toggle-switch-react-native/master/example/Screenshots/Screenshot.gif) -->
 
 ## Getting started  
 
 To Get Started, Import `react-native-toggle-switch` to your js file.   
 
-`import ToggleSwitch from 'toggle-switch-react-native'`  
+`import ToggleSwitch from 'react-native-toggle-switch'`  
 
 Inside your component's render method, or any other method returning views, use ToggleSwitch:   
 
 ```javascript
 <ToggleSwitch
-    onColor='green'
-    offColor='red'
     labels={ [ 'ON', 'OFF' ] }
-    labelStyle={{color: 'black', fontWeight: '900'}}
-    size='large'
+    size={ 30 }
     onToggle={ (val) => console.log('changed to : ', val) }
 />;
 ```
@@ -42,13 +39,13 @@ Inside your component's render method, or any other method returning views, use 
 
 Props              | Type     | Optional | Default     | Description
 ----------------- | -------- | -------- | ----------- | -----------
-isOn  | Boolean  | true | 'false'  |   Default state, true for On, false for off
-onColor | String |true |  '#634fc9' | On Color
-offColor  |  String | true | '#ecf0f1' | Off Color
-label | String| true |   | Custom Label Text on the Left of the toggle Button
-labelStyle | Object | true | {marginHorizontal: 10}  | Custom Styling for the Label Text View
-size | String | true |  'medium' | Size of the toggle switch button ( 'large', 'medium', 'small')
-onToggle | Function Callback | false |  none | Callback when the toggle switch component changes the state, params: isOn
+labels  | Array of Strings  | false | 'false'  |   Label which will appear on Toggle Switch Buttons
+activeColor | String |true |  '#634fc9' | On Color
+activeTextColor  |  String | true | '#ecf0f1' | Off Color
+inactiveColor | String| true |   | Custom Label Text on the Left of the toggle Button
+inactiveTextColor | Object | true | {marginHorizontal: 10}  | Custom Styling for the Label Text View
+size | Number | true |  30 | Size of the toggle switch button, maintains a 2:3 ratio of height:width
+onToggle | Function Callback | false |  none | Callback when the toggle switch component changes the state, Param: SwitchObject { index, label, state }
 
 ## Contribution
 
