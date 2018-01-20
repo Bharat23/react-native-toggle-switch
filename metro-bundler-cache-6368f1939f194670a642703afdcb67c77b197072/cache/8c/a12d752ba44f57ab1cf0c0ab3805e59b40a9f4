@@ -57,34 +57,37 @@ var ToggleSwitch = _wrapComponent('ToggleSwitch')(function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (ToggleSwitch.__proto__ || Object.getPrototypeOf(ToggleSwitch)).call(this, props));
 
-        _this._renderToggleButton = function (index, label) {
+        _this.onTap = function (index, label) {
+            var toggleButton = Array(_this.props.labels.length).fill(false);
+            toggleButton[index] = true;
+            _this.setState({ toggleButton: toggleButton });
+            _this.props.onToggle({ index: index, label: label, state: true });
+        };
 
+        _this._renderToggleButton = function (index, label) {
             return _react3.default.createElement(
                 _reactNative.TouchableOpacity,
                 {
-                    onPress: function onPress() {
-                        var toggleButton = Array(2).fill(false);
-                        toggleButton[index] = true;
-                        _this.setState({ toggleButton: toggleButton });
-                        _this.props.onToggle({ index: index, label: label, state: true });
+                    onPress: function onPress(index, label) {
+                        _this.onTap(index, label);
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 57
+                        lineNumber: 63
                     }
                 },
                 _react3.default.createElement(
                     _reactNative.View,
                     { style: [_this.styles.toggleButton, _this.state.toggleButton[index] && _this.styles.toggleButtonActive], __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 65
+                            lineNumber: 66
                         }
                     },
                     _react3.default.createElement(
                         _reactNative.Text,
                         { style: _this.styles.toggleButtonText, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 66
+                                lineNumber: 67
                             }
                         },
                         label || ' '
@@ -153,7 +156,7 @@ var ToggleSwitch = _wrapComponent('ToggleSwitch')(function (_Component) {
                 _reactNative.View,
                 { style: this.styles.toggleSwitchContainer, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 76
+                        lineNumber: 77
                     }
                 },
                 toggleSwitch
@@ -181,7 +184,7 @@ var wrapper = function wrapper() {
         _reactNative.View,
         { style: { flex: 1, justifyContent: 'center', alignItems: 'center' }, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 96
+                lineNumber: 97
             }
         },
         _react3.default.createElement(ToggleSwitch, {
@@ -191,7 +194,7 @@ var wrapper = function wrapper() {
             labels: ['ON', 'OFF'],
             __source: {
                 fileName: _jsxFileName,
-                lineNumber: 97
+                lineNumber: 98
             }
         })
     );

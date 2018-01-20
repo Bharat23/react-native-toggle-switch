@@ -51,16 +51,17 @@ class ToggleSwitch extends Component {
         });    
     }
 
+    onTap = (index, label) => {
+        let toggleButton = Array(this.props.labels.length).fill(false);
+        toggleButton[index] = true;
+        this.setState({ toggleButton });
+        this.props.onToggle({ index, label, state: true });
+    };
+
     _renderToggleButton = (index, label) => {
-        
         return (
             <TouchableOpacity
-                onPress={ () => {
-                    let toggleButton = Array(2).fill(false);
-                    toggleButton[index] = true;
-                    this.setState({ toggleButton });
-                    this.props.onToggle({ index, label, state: true });
-                } }
+                onPress={ (index, label) => { this.onTap(index, label) } }
             >
                 <View style={ [this.styles.toggleButton, this.state.toggleButton[index] && this.styles.toggleButtonActive ] }>
                     <Text style={ this.styles.toggleButtonText }>{ label || ' ' }</Text>
