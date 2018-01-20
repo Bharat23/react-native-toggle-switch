@@ -1,7 +1,7 @@
 {
-  "name": "toggle-switch",
+  "name": "react-native-toggle-switch",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "devDependencies": {
     "react-native-scripts": "1.9.0",
     "jest-expo": "23.0.0",

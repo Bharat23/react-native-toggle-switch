@@ -92,15 +92,4 @@ ToggleSwitch.propTypes = {
     size: PropTypes.number
 };
 
-const wrapper = () => {
-  return(
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <ToggleSwitch 
-        onToggle = { (a) => console.log(a) } 
-        labels = { ['ON', 'OFF'] }
-        />
-    </View>
-  );
-}
-
-export default wrapper;
+export default ToggleSwitch;
