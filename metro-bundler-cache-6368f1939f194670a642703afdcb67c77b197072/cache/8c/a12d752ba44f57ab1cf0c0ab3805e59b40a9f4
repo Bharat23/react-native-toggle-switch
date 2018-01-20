@@ -1,0 +1,200 @@
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react2 = require('react');
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require('./node_modules/react-transform-hmr/lib/index.js');
+
+var _index2 = _interopRequireDefault(_index);
+
+var _jsxFileName = '/Users/bharatsinha/Desktop/toggle-switch/App.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _reactNative = require('react-native');
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+    ToggleSwitch: {
+        displayName: 'ToggleSwitch'
+    }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: '/Users/bharatsinha/Desktop/toggle-switch/App.js',
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+    return function (Component) {
+        return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+}
+
+var ToggleSwitch = _wrapComponent('ToggleSwitch')(function (_Component) {
+    _inherits(ToggleSwitch, _Component);
+
+    function ToggleSwitch(props) {
+        _classCallCheck(this, ToggleSwitch);
+
+        var _this = _possibleConstructorReturn(this, (ToggleSwitch.__proto__ || Object.getPrototypeOf(ToggleSwitch)).call(this, props));
+
+        _this._renderToggleButton = function (index, label) {
+
+            return _react3.default.createElement(
+                _reactNative.TouchableOpacity,
+                {
+                    onPress: function onPress() {
+                        var toggleButton = Array(2).fill(false);
+                        toggleButton[index] = true;
+                        _this.setState({ toggleButton: toggleButton });
+                        _this.props.onToggle({ index: index, label: label, state: true });
+                    },
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 57
+                    }
+                },
+                _react3.default.createElement(
+                    _reactNative.View,
+                    { style: [_this.styles.toggleButton, _this.state.toggleButton[index] && _this.styles.toggleButtonActive], __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 65
+                        }
+                    },
+                    _react3.default.createElement(
+                        _reactNative.Text,
+                        { style: _this.styles.toggleButtonText, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 66
+                            }
+                        },
+                        label || ' '
+                    )
+                )
+            );
+        };
+
+        _this.state = {
+            toggleButton: [true].concat(_toConsumableArray(Array(props.labels.length - 1).fill(false)))
+        };
+        console.log('this.props', _this.state.toggleButton);
+        _this.props = props || {};
+        var _this$props = _this.props,
+            activeColor = _this$props.activeColor,
+            activeTextColor = _this$props.activeTextColor,
+            inactiveColor = _this$props.inactiveColor,
+            inactiveTextColor = _this$props.inactiveTextColor,
+            onToggle = _this$props.onToggle,
+            size = _this$props.size;
+
+        var height = size || 30;
+        var width = height * (3 / 2);
+        _this.styles = _reactNative.StyleSheet.create({
+            toggleSwitchContainer: {
+                flexDirection: 'row'
+            },
+            toggleButton: {
+                borderRadius: 3.0,
+                backgroundColor: inactiveColor || 'rgba(0, 0, 0, 0.5)',
+                height: height,
+                width: width,
+                alignItems: 'center',
+                justifyContent: 'center'
+            },
+            toggleButtonActive: {
+                backgroundColor: activeColor || 'blue',
+                opacity: 1
+            },
+            toggleButtonText: {
+                fontSize: 14,
+                fontWeight: "normal",
+                fontStyle: "normal",
+                letterSpacing: 0.06,
+                textAlign: "center",
+                color: inactiveTextColor || '#fff'
+            },
+            toggleButtonActiveText: {
+                color: activeTextColor || '#fff'
+            }
+        });
+        return _this;
+    }
+
+    _createClass(ToggleSwitch, [{
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var labels = this.props.labels;
+
+            var toggleSwitch = labels.map(function (label, index) {
+                return _this2._renderToggleButton(index, label);
+            });
+            return _react3.default.createElement(
+                _reactNative.View,
+                { style: this.styles.toggleSwitchContainer, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 76
+                    }
+                },
+                toggleSwitch
+            );
+        }
+    }]);
+
+    return ToggleSwitch;
+}(_react2.Component));
+
+;
+
+ToggleSwitch.propTypes = {
+    activeColor: _propTypes2.default.string,
+    activeTextColor: _propTypes2.default.string,
+    inactiveColor: _propTypes2.default.string,
+    inactiveTextColor: _propTypes2.default.string,
+    onToggle: _propTypes2.default.func.isRequired,
+    labels: _propTypes2.default.arrayOf(_propTypes2.default.string).isRequired,
+    size: _propTypes2.default.number
+};
+
+var wrapper = function wrapper() {
+    return _react3.default.createElement(
+        _reactNative.View,
+        { style: { flex: 1, justifyContent: 'center', alignItems: 'center' }, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 96
+            }
+        },
+        _react3.default.createElement(ToggleSwitch, {
+            onToggle: function onToggle(a) {
+                return console.log(a);
+            },
+            labels: ['ON', 'OFF'],
+            __source: {
+                fileName: _jsxFileName,
+                lineNumber: 97
+            }
+        })
+    );
+};
+
+exports.default = wrapper;
