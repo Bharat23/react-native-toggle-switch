@@ -9,7 +9,6 @@ class ToggleSwitch extends Component {
         this.state = {
             toggleButton: [ true, ...Array(props.labels.length - 1).fill(false) ]
         };
-        console.log('this.props', this.state.toggleButton);
 		this.props = props || {};
         let { 
             activeColor, 
