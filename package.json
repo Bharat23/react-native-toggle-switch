@@ -8,7 +8,7 @@
     "react-test-renderer": "16.0.0",
     "expo": "^23.0.4"
   },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "main": "App.js",
   "scripts": {
     "start": "react-native-scripts start",
     "eject": "react-native-scripts eject",

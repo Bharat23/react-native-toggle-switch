@@ -60,7 +60,7 @@ class ToggleSwitch extends Component {
     _renderToggleButton = (index, label) => {
         return (
             <TouchableOpacity
-                onPress={ (index, label) => { this.onTap(index, label) } }
+                onPress={ () => { this.onTap(index, label) } }
             >
                 <View style={ [this.styles.toggleButton, this.state.toggleButton[index] && this.styles.toggleButtonActive ] }>
                     <Text style={ this.styles.toggleButtonText }>{ label || ' ' }</Text>
