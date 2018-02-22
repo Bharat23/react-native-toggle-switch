@@ -28,5 +28,15 @@
     "url": "https://github.com/Bharat23/react-native-toggle-switch"
   },
   "license": "MIT",
-  "readme": "README.md"
+  "readme": "README.md",
+  "keywords": [
+    "react native",
+    "react",
+    "toggle",
+    "switch",
+    "UI",
+    "ios",
+    "android",
+    "toggle-switch"
+  ]
 }

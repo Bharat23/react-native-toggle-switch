@@ -3,11 +3,18 @@ Toggle Switch UI Component for React Native Apps ( iOS and Android Compatible )
 
 ## Content
 
+- [Features](#features)
 - [Installation](#installation)
 - [Demo](#demo)
 - [Getting started](#getting-started)
 - [API](#api)
 - [Contribution](#contribution)
+
+## Features
+
+* Plug-n-Play, easy to use module
+* Supports multiple buttons as well
+* Light-weight and compatible with both iOS and Android
 
 ## Installation
 
@@ -16,6 +23,8 @@ Toggle Switch UI Component for React Native Apps ( iOS and Android Compatible )
 
 ## Demo  
 <!-- * [Example](https://github.com/aminebenkeroum/toggle-switch-react-native/tree/master/example) -->
+<div data-snack-id="SkS-Qg3wf" data-snack-platform="ios" data-snack-preview="true" data-snack-theme="light" style="overflow:hidden;background:#fafafa;border:1px solid rgba(0,0,0,.16);border-radius:4px;height:505px;width:100%"></div>
+<script async src="https://snack.expo.io/embed.js"></script>
 
 ![Screenshots](https://github.com/Bharat23/react-native-toggle-switch/raw/master/assets/ezgif.com-crop.gif)
 
@@ -43,7 +52,7 @@ labels  | Array of Strings  | false | 'false'  |   Label which will appear on To
 activeColor | String |true |  'blue' | Active Color
 activeTextColor  |  String | true | '#fff' | Text Color of Active Button
 inactiveColor | String| true | 'rgba(0, 0, 0, 0.5)'  | Inactive Color
-inactiveTextColor | Object | true | '#fff'  | Text Color of inactive Button
+inactiveTextColor | String | true | '#fff'  | Text Color of inactive Button
 size | Number | true |  30 | Size of the toggle switch button, maintains a 2:3 ratio of height:width
 onToggle | Function Callback | false |  none | Callback when the toggle switch component changes the state, Param: SwitchObject { index, label, state }
 
