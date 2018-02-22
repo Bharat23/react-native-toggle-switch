@@ -22,9 +22,7 @@ Toggle Switch UI Component for React Native Apps ( iOS and Android Compatible )
 * 2.`import ToggleSwitch from 'react-native-toggle-switch'`    
 
 ## Demo  
-<!-- * [Example](https://github.com/aminebenkeroum/toggle-switch-react-native/tree/master/example) -->
-<div data-snack-id="SkS-Qg3wf" data-snack-platform="ios" data-snack-preview="true" data-snack-theme="light" style="overflow:hidden;background:#fafafa;border:1px solid rgba(0,0,0,.16);border-radius:4px;height:505px;width:100%"></div>
-<script async src="https://snack.expo.io/embed.js"></script>
+* [Example](https://snack.expo.io/B10brxnwf)
 
 ![Screenshots](https://github.com/Bharat23/react-native-toggle-switch/raw/master/assets/ezgif.com-crop.gif)
 
